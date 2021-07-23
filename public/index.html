@@ -23,11 +23,16 @@
         console.log("perdimos conexion!!")
     });
 
-    socket.emit('mensaje', {nombre: "Juan Carlos"});
+    // socket.emit('mensaje', {nombre: "Juan____Carlos"});
 
-    socket.on('mensaje', function(payload){
+    socket.on('nuevo-mensaje', function(payload){
         console.log("mensaje: ", payload);
-    })
+    });
+
+    socket.on('active-bands', function(bands){
+        console.clear();
+        console.table(bands);
+    });
 
 
 </script>
